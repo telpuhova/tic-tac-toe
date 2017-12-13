@@ -26,3 +26,8 @@ td .content {
 .square-table {
   width: 50%;
 }
+
+td:hover {
+  background-color: blue;
+  color: white;
+}
