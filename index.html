@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  <script src="js/jquery-3.2.1.js"></script>
   <script src="js/scripts.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title></title>
+  <title>Tic-Tac-Toe</title>
 </head>
 <body>
   <div class="container">
+    <button id="next-turn">Next turn</button>
+    <button id="end">End game</button>
+    <div class="row">
+      <div class="col-sm-6">
+          <p id="player1"></p>
+      </div>
+      <div class="col-sm-6">
+        <p id="player2"></p>
+      </div>
+
+      <div class="square-table">
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td id="0"></td>
+              <td id="1"></td>
+              <td id="2"></td>
+            </tr>
+            <tr>
+              <td id="3"></td>
+              <td id="4"></td>
+              <td id="5"></td>
+            </tr>
+            <tr>
+              <td id="6"></td>
+              <td id="7"></td>
+              <td id="8"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
 
+    </div>
   </div>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>
