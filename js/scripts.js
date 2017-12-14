@@ -66,6 +66,16 @@ $(document).ready(function() {
       newBoard.spaces[spaceNumber].score = markedValue(player.type);
       str = newBoard.checkScore();
       if (str !== "no") {
+        if (player.type === "X") {
+          $("#gameField").hide();
+          $("#result").append('<img src="img/x3.png" alt="X" class="responsive-img">');
+          $(".result").show();
+        } else {
+          $("#gameField").hide();
+          $("#result").append('<img src="img/o4.png" alt="O" class="responsive-img">');
+          $(".result").show();
+        }
+
       }
       $("td.temp").removeClass("temp");
       if (player.type === "X") {
@@ -84,7 +94,11 @@ $(document).ready(function() {
       $(".temp").empty();
       $("td.temp").removeClass("temp");
       $(this).toggleClass("temp");
-      $(this).text(player.type);
+      if (player.type === "X") {
+        $(this).append('<img src="img/x3.png" alt="X" class="responsive-img">');
+      } else if (player.type === "O") {
+        $(this).append('<img src="img/o4.png" alt="O" class="responsive-img">');
+      }
     }
   });
 })

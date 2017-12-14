@@ -1,3 +1,7 @@
+.result {
+  display: none;
+}
+
 .highlight-active {
   background-color: blue;
 }
@@ -5,15 +9,19 @@
 table {
   width: 90%;
 }
+
 td {
   width: 33.33%;
+  height: 100px;
   position: relative;
 }
-td:after {
+
+/*td:after {
   content: '';
   display: block;
   margin-top: 100%;
-}
+}*/
+
 td .content {
   position: absolute;
   top: 0;
@@ -23,11 +31,18 @@ td .content {
   background: gold;
 }
 
+img {
+    width: 60px;
+    align-items: center;
+    margin-left: 25px;
+    /*height: 10px;*/
+}
+
 .square-table {
   width: 50%;
 }
 
 td:hover {
-  background-color: blue;
+  background-color: #f8f8f8;
   color: white;
 }
