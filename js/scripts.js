@@ -52,6 +52,9 @@ var markedValue = function(checkedValue) {
 
 $(document).ready(function() {
   // debugger;
+  $("#new-game").hide();
+  // $("#next-turn").show();
+
   var player = new Player("X");
   newBoard = new Board();
   newBoard.makeSpaces();
@@ -66,13 +69,15 @@ $(document).ready(function() {
       newBoard.spaces[spaceNumber].score = markedValue(player.type);
       str = newBoard.checkScore();
       if (str !== "no") {
+        $("#new-game").show();
+        $("#next-turn").hide();
         if (player.type === "X") {
           $("#gameField").hide();
-          $("#result").append('<img src="img/x3.png" alt="X" class="responsive-img">');
+          $("#result").append('<img src="img/fx.png" alt="X" class="responsive-img">');
           $(".result").show();
         } else {
           $("#gameField").hide();
-          $("#result").append('<img src="img/o4.png" alt="O" class="responsive-img">');
+          $("#result").append('<img src="img/fo.png" alt="O" class="responsive-img">');
           $(".result").show();
         }
 
@@ -94,10 +99,11 @@ $(document).ready(function() {
       $(".temp").empty();
       $("td.temp").removeClass("temp");
       $(this).toggleClass("temp");
+      // $(this).append(player.type);
       if (player.type === "X") {
-        $(this).append('<img src="img/x3.png" alt="X" class="responsive-img">');
+        $(this).append('<img src="img/fx.png" alt="X" class="responsive-img">');
       } else if (player.type === "O") {
-        $(this).append('<img src="img/o4.png" alt="O" class="responsive-img">');
+        $(this).append('<img src="img/fo.png" alt="O" class="responsive-img">');
       }
     }
   });
