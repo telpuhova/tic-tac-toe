@@ -51,14 +51,37 @@ var markedValue = function(checkedValue) {
 }
 
 $(document).ready(function() {
-  // debugger;
-  $("#new-game").hide();
-  // $("#next-turn").show();
+
+  var playerAmount = $("input:radio:checked").val();
+  alert(playerAmount);
+
+  // $("#gameField").show();
 
   var player = new Player("X");
   newBoard = new Board();
   newBoard.makeSpaces();
   var str = "";
+
+
+  $("td").click(function() {
+    var playerAmount = $("input:radio:checked").val();
+    alert(playerAmount);
+
+    if ($(this).hasClass("X") || $(this).hasClass("O")) {
+    }
+    else {
+      $(".temp").empty();
+      $("td.temp").removeClass("temp");
+      $(this).toggleClass("temp");
+      // $(this).append(player.type);
+      if (player.type === "X") {
+        $(this).append('<img src="img/fx.png" alt="X" class="x-o-img">');
+      } else if (player.type === "O") {
+        $(this).append('<img src="img/fo.png" alt="O" class="x-o-img">');
+      }
+    }
+  });
+
 
   $("#next-turn").click(function() {
     if ($("td").hasClass("temp") === false) {
@@ -69,18 +92,15 @@ $(document).ready(function() {
       newBoard.spaces[spaceNumber].score = markedValue(player.type);
       str = newBoard.checkScore();
       if (str !== "no") {
-        $("#new-game").show();
-        $("#next-turn").hide();
         if (player.type === "X") {
           $("#gameField").hide();
-          $("#result").append('<img src="img/fx.png" alt="X" class="responsive-img">');
+          $("#result").append('<img src="img/fx.png" alt="X" class="x-o-img">');
           $(".result").show();
         } else {
           $("#gameField").hide();
-          $("#result").append('<img src="img/fo.png" alt="O" class="responsive-img">');
+          $("#result").append('<img src="img/fo.png" alt="O" class="x-o-img">');
           $(".result").show();
         }
-
       }
       $("td.temp").removeClass("temp");
       if (player.type === "X") {
@@ -92,19 +112,23 @@ $(document).ready(function() {
     }
   });
 
-  $("td").click(function() {
-    if ($(this).hasClass("X") || $(this).hasClass("O")) {
-    }
-    else {
-      $(".temp").empty();
-      $("td.temp").removeClass("temp");
-      $(this).toggleClass("temp");
-      // $(this).append(player.type);
-      if (player.type === "X") {
-        $(this).append('<img src="img/fx.png" alt="X" class="responsive-img">');
-      } else if (player.type === "O") {
-        $(this).append('<img src="img/fo.png" alt="O" class="responsive-img">');
-      }
-    }
+
+
+  $("#new-game").click(function() {
+    debugger;
+
+    $("td.X").removeClass("X");
+    $("td.O").removeClass("O");
+    $(".x-o-img").remove();
+
+    $("#gameField").show();
+    $(".result").hide();
+
+
+
+    var player = new Player("X");
+    newBoard = new Board();
+    newBoard.makeSpaces();
+    var str = "";
   });
-})
+});

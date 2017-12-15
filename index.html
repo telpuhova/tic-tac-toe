@@ -14,6 +14,12 @@
   <div class="container">
     <div class="row">
       <h1>tic-tac-toe</h1>
+      <div class="radio">
+        <label><input type="radio" name="amount-of-players" value="1">1 player</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="amount-of-players" value="2" checked>2 players</label>
+      </div>
       <div id="gameField" class="square-table">
         <table class="bordered">
           <tbody>
@@ -35,10 +41,11 @@
           </tbody>
         </table>
         <button id="next-turn">Next turn</button>
-        <button id="new-game">New game</button>
+        <!-- <button id="new-game">New game</button> -->
       </div>
       <div class="result">
         <p><span id="result"></span>'s won!</p>
+        <button id="new-game">New game</button>
       </div>
     </div>
   </div>
