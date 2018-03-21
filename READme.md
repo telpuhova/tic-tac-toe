@@ -1,20 +1,20 @@
-# _Tic tac toe_
+# Tic tac toe
 
-#### _tic tac toe website, 12/14/2017_
+tic tac toe website, 12/14/2017
 
 By **Natalia Telpukhova** & **Ryan G Ferris**
 
 ## Description
 
-_Web application with a game of tic tac toe._
+Web application with a game of tic tac toe.
 
 ## Setup
 
-* _clone repository_
-* _open index.html in browser_
+* clone repository
+* open index.html in browser
 
 ## Technologies Used
 
-_HTML, CSS, JS, Materialize, jquery_
+HTML, CSS, JS, Materialize, jquery
 
-Copyright (c) 2017 **_telpuhova & ryanglenferris_**
+Copyright (c) 2017 Natalia Telpukhova & Ryan G Ferris
